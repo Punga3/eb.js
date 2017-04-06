@@ -1,0 +1,27 @@
+{
+	"paths":{
+		"buildc":"build/class/",
+		"buildd":"build/dex/",
+		"src":"src/"
+	},
+	"files":{
+		"__java":{
+			"e":".java",
+			"p":"src",
+			"o":"__class"
+		},
+		"__class":{
+			"e":".class",
+			"p":"buildc",
+			"o":"__dex"
+		},
+		"__dex":{
+			"e":".dex",
+			"p":"buildd"
+		}
+	},
+	"cmds":[
+		["javac -d __od __i","__java"],
+		["echo __all__java",null]
+	]
+}
