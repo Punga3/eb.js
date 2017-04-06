@@ -6,6 +6,7 @@ var ebjJson = JSON.parse(fs.readFileSync(ebjFile, 'utf8'));
 var paths = ebjJson.paths;
 var files = ebjJson.files;
 var cmds = ebjJson.cmds;
+
 function getFiles(filen){
 	file=files[filen];
 	return( execSync("find "+paths[file.p]+" -name \"*"+file.e+"\"")+"").split(nl);
@@ -33,6 +34,7 @@ function replaceAlls(str){
 	}
 	return str;
 }
+
 function main(){
 	console.log("Starting to build by "+ebjFile);
 	for(var i=0;i<cmds.length;i++){
@@ -66,4 +68,5 @@ function main(){
 	}
 	console.log("Finished building without errors durning cmds execution.");
 }
+
 main();
